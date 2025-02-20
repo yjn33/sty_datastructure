@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+#include "sort/sort.h"
 #include "sort/sort_recursion.h"
 #include "arr/arr.h"
 
@@ -13,11 +14,11 @@ int main(void)
 
     arr_display(a, 7);
 
-    sort_recur_insertion(a, 6);
+    //sort_recur_insertion(a, 6);
+    sort_insertion(a, 7);
+
 
     arr_display(a, 7);
-
-
 
 
     return 0;

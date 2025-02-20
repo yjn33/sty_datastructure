@@ -15,9 +15,9 @@ void sort_recur_insertion(int *arr, int last_index)
     sort_recur_insertion(arr, last_index - 1); // 재귀적으로 하나씩 줄여나간다
     
     int k = 0;
-    int hold = arr[last_index];
+    int hold = arr[last_index]; // 고정값
 
-    k = _insertion(arr, last_index, hold);
+    k = _insertion(arr, last_index, hold); // 내부 재귀반복 실행
 
     arr[k] = hold;
 

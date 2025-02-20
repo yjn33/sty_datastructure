@@ -1,5 +1,6 @@
 {
     "files.associations": {
-        "sort_recursion.h": "c"
+        "sort_recursion.h": "c",
+        "arr.h": "c"
     }
 }
