@@ -39,6 +39,9 @@ StackType *stack_init(void)
     }
 
     // 메모리 할당 성공시
+    new_stack -> top = NULL_PTR;
+
+    // 초기화한 스택 메모리공간을 호출한 L-value에 반환
     return new_stack;
 
 }
