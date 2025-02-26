@@ -16,6 +16,8 @@
 
 #include "stack.h"
 
+static StackNode *_create_node(void *); // private 함수 
+
 
 /*
     StackType 구조체 초기화 함수
@@ -43,6 +45,56 @@ StackType *stack_init(void)
 
     // 초기화한 스택 메모리공간을 호출한 L-value에 반환
     return new_stack;
+
+}
+
+
+/*
+    StackNode 구조체 동적할당 함수
+    요청 데이터를 받아 StackNode 구조체를 생성후 
+    L-value에 동적할당공간을 반환한다
+
+    주의: L-value 없이 해당 함수 호출시 할당 메모리가 discard되어지지 않아 
+    memory leak 발생 가능성이 있다 (C언어는 가비지 컬렉터 기능이 없음)
+*/
+static StackNode *_create_node(void * insert_data)
+{
+    StackNode *new_node = malloc(sizeof(StackNode));
+
+    if(new_node == NULL_PTR)
+    {
+        printf("fail to allocation of memory \n");
+        exit(EXIT_FAILURE);
+    }
+
+    new_node -> link = NULL_PTR;
+    new_node -> data = insert_data;
+
+    return new_node;
+
+}
+
+
+/*
+    Stack Push함수
+
+*/
+void stack_push(StackType *stk, void *push_data)
+{
+    StackNode *new_node = _create_node(push_data);
+
+    if(stk -> top) // 스택이 비어있지 않을경우
+    {
+        //new_node -> link = NULL_PTR;
+        stk -> top -> link = new_node;
+        stk -> top = new_node;
+    }
+
+    else // is empty == true
+    {
+        //new_node -> link = NULL_PTR;
+        stk -> top = new_node;
+    }
 
 }
 
