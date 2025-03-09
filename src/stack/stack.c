@@ -99,6 +99,28 @@ void stack_push(StackType *stk, void *push_data)
 }
 
 
+/*
+    stack pop 함수
+    void* 제네릭 포인터 stk -> top 반환
+*/
+void* stack_pop(StackType *stk)
+{
+    if((stk -> top == NULL_PTR) || (stk == NULL_PTR)) // is empty? or stk not init
+    {
+        printf("stack empty");
+        return NULL_PTR;
+    }
+
+    StackNode *remove_node = stk -> top; // top 노드를 가르킨다
+    void *return_data = remove_node -> data; // top노드의 데이터 저장
+    
+    stk -> top = remove_node -> link; // 스택의 top을 아래로 이동
+
+    free(remove_node); // 기존의 top노드 메모리 해제
+
+    return return_data; // 기존의 top노드 제네릭 포인터 데이터 반환
+
+}
 
 
 

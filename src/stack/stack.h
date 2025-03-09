@@ -28,6 +28,7 @@ typedef struct stack_type
 
 StackType *stack_init(void);
 void stack_push(StackType *stk, void *push_data);
+void* stack_pop(StackType *stk);
 
 
 
