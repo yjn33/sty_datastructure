@@ -35,7 +35,7 @@ typedef struct tree_type
 
 // 프로토 타입 함수목록
 TreeType *tree_init(void);
-void tree_insert_node(TreeType *tree, int insert_key, void *insert_data);
+void tree_insert(TreeType *tree, int insert_key, void *insert_data);
 
 
 

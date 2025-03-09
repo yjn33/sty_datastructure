@@ -76,7 +76,7 @@ static TreeNode *_create_node(int insert_key, void *insert_data)
     
 
 */
-void tree_insert_node(TreeType *tree, int insert_key, void *insert_data)
+void tree_insert(TreeType *tree, int insert_key, void *insert_data)
 {
     TreeNode *p, *curr, *new_node;
     p = curr = new_node = NULL_PTR;
