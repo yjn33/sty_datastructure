@@ -136,6 +136,22 @@ void tree_insert(TreeType *tree, int insert_key, void *insert_data)
 }
 
 
+/*
+    TreeType에 키를 검색하고 해당 키의 데이터를 삭제하고 반환하는 함수
+
+*/
+void *tree_delete(TreeType *tree, int delete_key)
+{
+    TreeNode *p, *curr, *succ, *succ_p;
+    p = curr = succ = succ_p = NULL_PTR;
+
+    
+
+
+
+
+
+}
 
 
 
